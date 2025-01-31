@@ -1,0 +1,8 @@
+bun run src/app.ts
+bun run --watch src/app.ts
+
+mst itu master
+tr itu transaction
+
+npm run pull:auth (Kalo Pull Ga Otomatis ke generate, tipe datanya)
+npm run generate:auth (untuk generate)

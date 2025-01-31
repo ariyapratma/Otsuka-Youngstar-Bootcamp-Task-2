@@ -1,4 +1,4 @@
-import 'module-alias/register';
+import "module-alias/register";
 
 declare global {
   interface BigInt {
@@ -11,13 +11,13 @@ BigInt.prototype.toJSON = function () {
   return int ?? this.toString();
 };
 
-import path from 'path';
-import cors from 'cors';
-import express from 'express';
-import createRouter from 'express-file-routing';
-import dotenv from 'dotenv';
-import fileUpload from 'express-fileupload';
-import morgan from 'morgan';
+import path from "path";
+import cors from "cors";
+import express from "express";
+import createRouter from "express-file-routing";
+import dotenv from "dotenv";
+import fileUpload from "express-fileupload";
+import morgan from "morgan";
 
 const main = async () => {
   dotenv.config();
@@ -28,31 +28,31 @@ const main = async () => {
   app.use(express.urlencoded({ extended: true }));
   app.use(cors());
   app.use(fileUpload());
-  app.use(morgan('dev')); // Add Morgan middleware
-  app.use(express.static(path.join(__dirname, '../public')));
+  app.use(morgan("dev")); // Add Morgan middleware
+  app.use(express.static(path.join(__dirname, "../public")));
 
   const router = express.Router();
 
-  let bodyParser = require('body-parser');
+  let bodyParser = require("body-parser");
 
   app.use(
     bodyParser.json({
-      limit: '50mb',
+      limit: "50mb",
     })
   );
   app.use(
     bodyParser.urlencoded({
-      limit: '50mb',
+      limit: "50mb",
       extended: true,
       parameterLimit: 50000,
     })
   );
 
   await createRouter(router, {
-    directory: path.join(__dirname, 'routes'),
+    directory: path.join(__dirname, "routes"),
   });
 
-  app.use('/api', router);
+  app.use("/", router);
 
   const PORT = +(process.env.PORT || 4912);
 

@@ -1,0 +1,95 @@
+GET http://localhost:4912
+
+###
+
+GET http://localhost:4912/users?stop=true
+
+###
+POST  http://localhost:4912/users
+Content-Type: application/json
+
+{
+  "name": "Ariya Pratama"
+}
+
+### 
+PUT http://localhost:4912/users/1
+Content-Type: application/json
+
+{
+  "name": "Ariya"
+}
+
+###
+DELETE  http://localhost:4912/users/1
+
+### 
+GET http://localhost:4912/todos/9?stop=true
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODMwOTM2OCwiZXhwIjoxNzM4MzEyOTY4fQ.KO37Cimw1Pe-ZmVjo2fnfTXEDSqgQ5FFMxIQiHaAV60
+
+###
+POST http://localhost:4912/todos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODMwOTM2OCwiZXhwIjoxNzM4MzEyOTY4fQ.KO37Cimw1Pe-ZmVjo2fnfTXEDSqgQ5FFMxIQiHaAV60
+
+{
+  "title": "Benefit",
+  "category_id":1,
+  "description": "This is description",
+  "progress": 20
+}
+
+### 
+PUT http://localhost:4912/todos/15
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODMwOTM2OCwiZXhwIjoxNzM4MzEyOTY4fQ.KO37Cimw1Pe-ZmVjo2fnfTXEDSqgQ5FFMxIQiHaAV60
+
+{
+  "title": "Updated Todo Terbaru"
+  
+}
+
+
+###
+DELETE http://localhost:4912/todos/13
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODMwOTM2OCwiZXhwIjoxNzM4MzEyOTY4fQ.KO37Cimw1Pe-ZmVjo2fnfTXEDSqgQ5FFMxIQiHaAV60
+
+
+### 
+GET http://localhost:4912/todo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODMwOTM2OCwiZXhwIjoxNzM4MzEyOTY4fQ.KO37Cimw1Pe-ZmVjo2fnfTXEDSqgQ5FFMxIQiHaAV60
+
+### 
+GET http://localhost:4912/todo/1
+
+###
+POST http://localhost:4912/todo
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODMwOTM2OCwiZXhwIjoxNzM4MzEyOTY4fQ.KO37Cimw1Pe-ZmVjo2fnfTXEDSqgQ5FFMxIQiHaAV60
+
+{
+  "category":"Public"
+}
+
+###
+PUT http://localhost:4912/todo/2
+Content-Type: application/json
+
+{
+  "category": "Public"
+  
+}
+
+### 
+DELETE http://localhost:4912/master/2
+Content-Type: application/json
+
+### 
+POST http://localhost:4912/auth/login
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "password": "qwe123"
+}
