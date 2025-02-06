@@ -1,0 +1,54 @@
+POST http://localhost:4912/auth/login
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "password": "qwe123"
+}
+
+###
+# PUT http://localhost:4912/todos/3
+# Content-Type: application/json
+
+# {
+#   "title": "new title"
+# }
+
+GET http://localhost:4912/todos/
+
+# POST http://localhost:4912/todos/
+# Content-Type: application/json
+
+# {
+#   "title": "new title"
+#   "category_id": 1
+#   "description": "new description"
+#   "progress": 0
+  
+# }
+
+###
+
+PUT http://localhost:4912/todos/8
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODMwNjAwMiwiZXhwIjoxNzM4MzkyNDAyfQ.rYqPZjZ7V93xGjlpvMZClg2n63AnbKZUtOatsamMW3Q
+
+{
+  "title": "new title"
+}
+
+
+###
+
+POST http://localhost:4912/todos/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODgyNzU0OSwiZXhwIjoxNzM4ODMxMTQ5fQ.GBrr3R3hZD1lvGVE2oKQSZpGco4xlJgkwVVd9Xxl454
+
+{
+  "title": "Ariya Pratama",
+  "category_id": 5,
+  "description": "Otsuka",
+  "progress" : 100
+
+
+}

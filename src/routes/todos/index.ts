@@ -8,9 +8,7 @@ export const get = [
   async (req: CustomRequestCollage, res: Response) => {
     const todos = await main_db.tr_todo.findMany({
       where: {
-        deleted_at: {
-          not: null,
-        },
+        deleted_at: null
       },
     });
     res.status(200).json({

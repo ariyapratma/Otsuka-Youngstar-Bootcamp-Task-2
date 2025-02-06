@@ -24,13 +24,13 @@ Content-Type: application/json
 DELETE  http://localhost:4912/users/1
 
 ### 
-GET http://localhost:4912/todos/9?stop=true
+GET http://localhost:4912/todos
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODMwOTM2OCwiZXhwIjoxNzM4MzEyOTY4fQ.KO37Cimw1Pe-ZmVjo2fnfTXEDSqgQ5FFMxIQiHaAV60
 
 ###
 POST http://localhost:4912/todos
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODMwOTM2OCwiZXhwIjoxNzM4MzEyOTY4fQ.KO37Cimw1Pe-ZmVjo2fnfTXEDSqgQ5FFMxIQiHaAV60
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODgyNjY0MiwiZXhwIjoxNzM4ODMwMjQyfQ.uuh-mzgsTVs7t3V9s_D7JopBvQKeVkfDDZJW6YdXRHU
 
 {
   "title": "Benefit",
@@ -66,7 +66,7 @@ GET http://localhost:4912/todo/1
 ###
 POST http://localhost:4912/todo
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODMwOTM2OCwiZXhwIjoxNzM4MzEyOTY4fQ.KO37Cimw1Pe-ZmVjo2fnfTXEDSqgQ5FFMxIQiHaAV60
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODgxMzQ4MywiZXhwIjoxNzM4ODE3MDgzfQ.h2oOmYWtoKgYCE1rFxrVGTLgr6nJJDlApz748qaODdQ
 
 {
   "category":"Public"
@@ -80,11 +80,6 @@ Content-Type: application/json
   "category": "Public"
   
 }
-
-### 
-DELETE http://localhost:4912/master/2
-Content-Type: application/json
-
 ### 
 POST http://localhost:4912/auth/login
 Content-Type: application/json
