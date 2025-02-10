@@ -1,10 +1,9 @@
 import { main_db } from "@/lib/db";
-// import { printTimestampCollage } from "@/middlewares/printTimestampCollage";
+import { printTimestampCollage } from "@/middlewares/printTimestampCollage";
 import { Request, Response } from "express";
 import { CustomRequestCollage } from "@/types/todos";
 
 export const get = [
-  // printTimestampCollage,
   async (req: CustomRequestCollage, res: Response) => {
     try {
       const id = parseInt(req.params.id, 10);
@@ -45,19 +44,15 @@ export const get = [
 ];
 
 export const put = [
-  // printTimestampCollage,
+  printTimestampCollage,
   async (req: CustomRequestCollage, res: Response) => {
     try {
       const { title, category_id, description, progress = 0 } = req.body;
       const id = parseInt(req.params.id, 10);
-
-      console.log('Ini dari PUT: ', req.user);
-    
-
       if (isNaN(id)) {
         return res.status(400).json({
           status: false,
-          message: "ID tidak valid",
+          message: "Invalid ID",
         });
       }
 
@@ -71,7 +66,7 @@ export const put = [
       if (!isExist) {
         return res.status(404).json({
           status: false,
-          message: "Todo tidak ditemukan",
+          message: "Todo not found",
         });
       }
 
@@ -88,7 +83,7 @@ export const put = [
 
       return res.status(200).json({
         status: true,
-        message: "Todo berhasil diperbarui",
+        message: "Todo updated successfully",
         data: updatedTodo,
       });
     } catch (error) {
@@ -102,7 +97,6 @@ export const put = [
 ];
 
 export const del = [
-  // printTimestampCollage,
   async (req: CustomRequestCollage, res: Response) => {
     try {
       const id = parseInt(req.params.id, 10);
@@ -110,7 +104,7 @@ export const del = [
       if (isNaN(id)) {
         return res.status(400).json({
           status: false,
-          message: "ID tidak valid",
+          message: "Invalid ID",
         });
       }
 
@@ -124,7 +118,7 @@ export const del = [
       if (!isExist) {
         return res.status(404).json({
           status: false,
-          message: "Todo tidak ditemukan",
+          message: "Todo not found",
         });
       }
 
@@ -135,7 +129,7 @@ export const del = [
 
       return res.status(200).json({
         status: true,
-        message: "Todo berhasil dihapus",
+        message: "Todo successfully deleted",
         data: deletedTodo,
       });
     } catch (error) {

@@ -3,7 +3,6 @@ import { printTimestamp } from "@/middlewares/printTimestamp";
 import { CustomRequest } from "@/types";
 import { Request, Response } from "express";
 
-//  GET All Categories (findMany)
 export const get = async (req: Request, res: Response) => {
   try {
     const todos = await main_db.mst_todo_category.findMany({
@@ -25,14 +24,11 @@ export const get = async (req: Request, res: Response) => {
   }
 };
 
-//  POST (Create New Category) with Middleware printTimestamp
 export const post = [
   printTimestamp,
   async (req: CustomRequest, res: Response) => {
     try {
       const { category } = req.body;
-
-      // Validasi input category
       if (!category || category.trim() === "") {
         return res.status(400).json({
           status: false,
@@ -40,7 +36,6 @@ export const post = [
         });
       }
 
-      // Buat kategori baru
       const todo = await main_db.mst_todo_category.create({
         data: {
           category: category,

@@ -28,7 +28,7 @@ export const del = [
     ];
     const userIndex = users.findIndex((u) => u.id === parseInt(req.params.id));
     if (userIndex !== -1) {
-      users.splice(userIndex, 1); // Remove the user from the array
+      users.splice(userIndex, 1);
       res.send("User deleted");
     } else {
       res.status(404).send("User not found");

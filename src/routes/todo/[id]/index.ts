@@ -2,12 +2,9 @@ import { main_db } from "@/lib/db";
 import { Request, Response } from "express";
 import { printTimestamp } from "@/middlewares/printTimestamp";
 
-// Get By ID Only
 export const get = async (req: Request, res: Response) => {
   try {
     const id = parseInt(req.params.id);
-
-    // Validasi ID harus angka
     if (isNaN(id)) {
       return res.status(400).json({
         status: false,
@@ -15,15 +12,13 @@ export const get = async (req: Request, res: Response) => {
       });
     }
 
-    // Cari data berdasarkan ID
     const todo = await main_db.mst_todo_category.findUnique({
       where: {
         id: id,
-        deleted_at: null, // Hanya ambil data yang belum dihapus (soft delete)
+        deleted_at: null,
       },
     });
 
-    // Jika tidak ditemukan
     if (!todo) {
       return res.status(404).json({
         status: false,
@@ -44,15 +39,12 @@ export const get = async (req: Request, res: Response) => {
   }
 };
 
-// ✅ Update Category (PUT)
 export const put = [
-  printTimestamp, // Middleware untuk mencetak timestamp request
+  printTimestamp,
   async (req: Request, res: Response) => {
     try {
       const { category } = req.body;
       const id = parseInt(req.params.id);
-
-      // Cetak Authorization Header
       console.log("Authorization Header:", req.headers["authorization"]);
 
       if (isNaN(id)) {
@@ -99,14 +91,11 @@ export const put = [
   },
 ];
 
-// ✅ Soft Delete (DELETE)
 export const del = [
-  printTimestamp, // Middleware untuk mencetak timestamp request
+  printTimestamp,
   async (req: Request, res: Response) => {
     try {
       const id = parseInt(req.params.id);
-
-      // Cetak Authorization Header
       console.log("Authorization Header:", req.headers["authorization"]);
 
       if (isNaN(id)) {
@@ -139,7 +128,7 @@ export const del = [
         },
       });
 
-      return res.status(204).send(); // 204 No Content
+      return res.status(204).send();
     } catch (error) {
       return res.status(500).json({
         status: false,

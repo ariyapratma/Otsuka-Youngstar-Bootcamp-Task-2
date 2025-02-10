@@ -4,11 +4,10 @@ import { main_db } from "@/lib/db";
 import { CustomRequestCollage } from "@/types/todos";
 
 export const get = [
-  // printTimestampCollage,
   async (req: CustomRequestCollage, res: Response) => {
     const todos = await main_db.tr_todo.findMany({
       where: {
-        deleted_at: null
+        deleted_at: null,
       },
     });
     res.status(200).json({
