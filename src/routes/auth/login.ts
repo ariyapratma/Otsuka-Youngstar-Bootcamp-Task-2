@@ -29,7 +29,7 @@ export const post = async (req: Request, res: Response) => {
     }
 
     // Generate JWT token
-    const token = jwt.sign(user, JWT_SECRET, { expiresIn: "100d" });
+    const token = jwt.sign(user, JWT_SECRET, { expiresIn: "1000000000000000000000000d" });
 
     res.json({
       status: true,
